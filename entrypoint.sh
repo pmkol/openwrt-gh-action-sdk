@@ -51,7 +51,7 @@ endgroup
 group "feeds update -a"
 ./scripts/feeds update -a
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' include/target.mk
 endgroup
 

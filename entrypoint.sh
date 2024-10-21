@@ -50,6 +50,9 @@ endgroup
 
 group "feeds update -a"
 ./scripts/feeds update -a
+feeds_version=$(cat feeds.conf | head -1 | awk -Fopenwrt- '{print $2}')
+rm -rf feeds/packages/lang/node
+git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-$feeds_version feeds/packages/lang/node
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' include/target.mk

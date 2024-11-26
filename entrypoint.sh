@@ -60,6 +60,10 @@ git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' include/target.mk
+rm -rf feeds/packages/libs/nghttp3
+git clone https://github.com/sbwml/package_libs_nghttp3 package/libs/nghttp3
+rm -rf feeds/packages/libs/ngtcp2
+git clone https://github.com/sbwml/package_libs_ngtcp2 package/libs/ngtcp2
 endgroup
 
 group "make defconfig"

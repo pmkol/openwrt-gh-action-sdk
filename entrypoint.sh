@@ -58,7 +58,7 @@ feeds_version=$(cat feeds.conf | head -1 | awk -Fopenwrt- '{print $2}')
 rm -rf feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-$feeds_version feeds/packages/lang/node
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' include/target.mk
 rm -rf feeds/packages/libs/nghttp3
 git clone https://github.com/sbwml/package_libs_nghttp3 package/libs/nghttp3

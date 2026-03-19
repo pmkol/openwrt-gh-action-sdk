@@ -63,7 +63,7 @@ group "feeds update -a"
 ./scripts/feeds update -a
 endgroup
 
-group "golang 1.25.x"
+group "golang 1.26.x"
 rm -rf feeds/packages/net/{v2ray-core,v2ray-geodata,v2raya,xray-core,sing-box,shadowsocks-libev}
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
